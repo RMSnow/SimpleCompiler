@@ -4,7 +4,7 @@
 
 ## 源语言
 
-一个程序由一个块组成，该块中包含可选的声明和语句。语法符号basic表示基本类型。  
+一个程序由一个块组成，该块中包含可选的声明和语句。语法符号`basic`表示基本类型。  
 
     program -> block
     
@@ -15,7 +15,7 @@
              
     decl    -> type id ;
     
-    type    -> type \[ num \] 
+    type    -> type [ num ] 
              | basic
       
     stmts   -> stmts stmt
@@ -31,7 +31,7 @@
              | break ;
              | block
              
-    loc     -> loc \[ bool \]
+    loc     -> loc [ bool ]
              | id
 
 表达式的产生式处理了运算符的结合性和优先级。它们对每个优先级级别都使用了一个非终结符号，而非终结符号factor用来表示括号中的表达式、标识符、数组引用和常量。  
