@@ -11,9 +11,9 @@ public class Expr extends Node {
     public Token op;        //结点上的运算符
     public Type type;       //结点类型
 
-    protected Expr(Token tok, Type p) {
-        op = tok;
-        type = p;
+    protected Expr(Token op, Type type) {
+        this.op = op;
+        this.type = type;
     }
 
     /**

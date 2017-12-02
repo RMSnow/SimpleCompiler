@@ -49,6 +49,7 @@ public class Parser {
      */
     public void program() throws IOException {      // program -> block
         Stmt s = block();
+
         int begin = s.newlabel();
         int after = s.newlabel();
         s.emitlabel(begin);
@@ -58,12 +59,17 @@ public class Parser {
 
     Stmt block() throws IOException {       // block -> { decls stmts }
         match('{');
+
         Env savedEnv = top;
         top = new Env(top);
+
         decls();
         Stmt s = stmts();
+
         match('}');
+
         top = savedEnv;
+
         return s;
     }
 
