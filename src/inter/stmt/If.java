@@ -19,7 +19,7 @@ public class If extends Stmt {
     }
 
     @Override
-    public void gen(int a, int b) {
+    public void gen(int b, int a) {
         int label = newlabel();     //stmt的代码的标号
         expr.jumping(0, a);     //为真时控制流穿越，为假时转向a
         emitlabel(label);
